@@ -1,4 +1,4 @@
-/** @ignore */
+
 declare global {
     interface Window {
         __TAURI_OS_PLUGIN_INTERNALS__: {
