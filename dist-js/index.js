@@ -31,8 +31,8 @@ function eol() {
  * @since 2.0.0
  *
  */
-async function platform() {
-    return await invoke("plugin:os|platform");
+function platform() {
+    return window.__TAURI_OS_PLUGIN_INTERNALS__.platform;
 }
 /**
  * Returns the current operating system version.
@@ -44,8 +44,8 @@ async function platform() {
  *
  * @since 2.0.0
  */
-async function version() {
-    return await invoke("plugin:os|version");
+function version() {
+    return window.__TAURI_OS_PLUGIN_INTERNALS__.version;
 }
 /**
  * Returns the current operating system family. Possible values are `'unix'`, `'windows'`.
@@ -57,8 +57,8 @@ async function version() {
  *
  * @since 2.0.0
  */
-async function family() {
-    return await invoke("plugin:os|family");
+function family() {
+    return window.__TAURI_OS_PLUGIN_INTERNALS__.family;
 }
 /**
  * Returns the current operating system type. Returns `'linux'` on Linux, `'macos'` on macOS, `'windows'` on Windows, `'ios'` on iOS and `'android'` on Android.
@@ -70,8 +70,8 @@ async function family() {
  *
  * @since 2.0.0
  */
-async function type() {
-    return await invoke("plugin:os|os_type");
+function type() {
+    return window.__TAURI_OS_PLUGIN_INTERNALS__.os_type;
 }
 /**
  * Returns the current operating system architecture.
@@ -84,8 +84,21 @@ async function type() {
  *
  * @since 2.0.0
  */
-async function arch() {
-    return await invoke("plugin:os|arch");
+function arch() {
+    return window.__TAURI_OS_PLUGIN_INTERNALS__.arch;
+}
+/**
+ * Returns the file extension, if any, used for executable binaries on this platform. Possible values are `'exe'` and `''` (empty string).
+ * @example
+ * ```typescript
+ * import { exeExtension } from '@tauri-apps/plugin-os';
+ * const exeExt = await exeExtension();
+ * ```
+ *
+ * @since 2.0.0
+ */
+function exeExtension() {
+    return window.__TAURI_OS_PLUGIN_INTERNALS__.exe_extension;
 }
 /**
  * Returns a String with a `BCP-47` language tag inside. If the locale couldn’t be obtained, `null` is returned instead.
@@ -102,19 +115,6 @@ async function arch() {
  */
 async function locale() {
     return await invoke("plugin:os|locale");
-}
-/**
- * Returns the file extension, if any, used for executable binaries on this platform. Possible values are `'exe'` and `''` (empty string).
- * @example
- * ```typescript
- * import { exeExtension } from '@tauri-apps/plugin-os';
- * const exeExt = await exeExtension();
- * ```
- *
- * @since 2.0.0
- */
-async function exeExtension() {
-    return await invoke("plugin:os|exe_extension");
 }
 /**
  * Returns the host name of the operating system.

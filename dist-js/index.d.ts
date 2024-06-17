@@ -3,6 +3,12 @@ declare global {
     interface Window {
         __TAURI_OS_PLUGIN_INTERNALS__: {
             eol: string;
+            os_type: OsType;
+            platform: Platform;
+            family: Family;
+            version: string;
+            arch: Arch;
+            exe_extension: string;
         };
     }
 }
@@ -30,7 +36,7 @@ declare function eol(): string;
  * @since 2.0.0
  *
  */
-declare function platform(): Promise<Platform>;
+declare function platform(): Platform;
 /**
  * Returns the current operating system version.
  * @example
@@ -41,7 +47,7 @@ declare function platform(): Promise<Platform>;
  *
  * @since 2.0.0
  */
-declare function version(): Promise<string>;
+declare function version(): string;
 type Family = "unix" | "windows";
 /**
  * Returns the current operating system family. Possible values are `'unix'`, `'windows'`.
@@ -53,7 +59,7 @@ type Family = "unix" | "windows";
  *
  * @since 2.0.0
  */
-declare function family(): Promise<Family>;
+declare function family(): Family;
 /**
  * Returns the current operating system type. Returns `'linux'` on Linux, `'macos'` on macOS, `'windows'` on Windows, `'ios'` on iOS and `'android'` on Android.
  * @example
@@ -64,7 +70,7 @@ declare function family(): Promise<Family>;
  *
  * @since 2.0.0
  */
-declare function type(): Promise<OsType>;
+declare function type(): OsType;
 /**
  * Returns the current operating system architecture.
  * Possible values are `'x86'`, `'x86_64'`, `'arm'`, `'aarch64'`, `'mips'`, `'mips64'`, `'powerpc'`, `'powerpc64'`, `'riscv64'`, `'s390x'`, `'sparc64'`.
@@ -76,7 +82,18 @@ declare function type(): Promise<OsType>;
  *
  * @since 2.0.0
  */
-declare function arch(): Promise<Arch>;
+declare function arch(): Arch;
+/**
+ * Returns the file extension, if any, used for executable binaries on this platform. Possible values are `'exe'` and `''` (empty string).
+ * @example
+ * ```typescript
+ * import { exeExtension } from '@tauri-apps/plugin-os';
+ * const exeExt = await exeExtension();
+ * ```
+ *
+ * @since 2.0.0
+ */
+declare function exeExtension(): string;
 /**
  * Returns a String with a `BCP-47` language tag inside. If the locale couldn’t be obtained, `null` is returned instead.
  * @example
@@ -91,17 +108,6 @@ declare function arch(): Promise<Arch>;
  * @since 2.0.0
  */
 declare function locale(): Promise<string | null>;
-/**
- * Returns the file extension, if any, used for executable binaries on this platform. Possible values are `'exe'` and `''` (empty string).
- * @example
- * ```typescript
- * import { exeExtension } from '@tauri-apps/plugin-os';
- * const exeExt = await exeExtension();
- * ```
- *
- * @since 2.0.0
- */
-declare function exeExtension(): Promise<string | null>;
 /**
  * Returns the host name of the operating system.
  * @example
