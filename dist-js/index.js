@@ -25,7 +25,7 @@ function eol() {
  * @example
  * ```typescript
  * import { platform } from '@tauri-apps/plugin-os';
- * const platformName = await platform();
+ * const platformName = platform();
  * ```
  *
  * @since 2.0.0
@@ -39,7 +39,7 @@ function platform() {
  * @example
  * ```typescript
  * import { version } from '@tauri-apps/plugin-os';
- * const osVersion = await version();
+ * const osVersion = version();
  * ```
  *
  * @since 2.0.0
@@ -52,7 +52,7 @@ function version() {
  * @example
  * ```typescript
  * import { family } from '@tauri-apps/plugin-os';
- * const family = await family();
+ * const family = family();
  * ```
  *
  * @since 2.0.0
@@ -65,7 +65,7 @@ function family() {
  * @example
  * ```typescript
  * import { type } from '@tauri-apps/plugin-os';
- * const osType = await type();
+ * const osType = type();
  * ```
  *
  * @since 2.0.0
@@ -79,7 +79,7 @@ function type() {
  * @example
  * ```typescript
  * import { arch } from '@tauri-apps/plugin-os';
- * const archName = await arch();
+ * const archName = arch();
  * ```
  *
  * @since 2.0.0
@@ -92,7 +92,7 @@ function arch() {
  * @example
  * ```typescript
  * import { exeExtension } from '@tauri-apps/plugin-os';
- * const exeExt = await exeExtension();
+ * const exeExt = exeExtension();
  * ```
  *
  * @since 2.0.0
