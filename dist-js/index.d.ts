@@ -1,20 +1,41 @@
 /** @ignore */
 declare global {
-    interface Window {
-        __TAURI_OS_PLUGIN_INTERNALS__: {
-            eol: string;
-            os_type: OsType;
-            platform: Platform;
-            family: Family;
-            version: string;
-            arch: Arch;
-            exe_extension: string;
-        };
-    }
+	interface Window {
+		__TAURI_OS_PLUGIN_INTERNALS__: {
+			eol: string;
+			os_type: OsType;
+			platform: Platform;
+			family: Family;
+			version: string;
+			arch: Arch;
+			exe_extension: string;
+		};
+	}
 }
-type Platform = "linux" | "macos" | "ios" | "freebsd" | "dragonfly" | "netbsd" | "openbsd" | "solaris" | "android" | "windows";
+type Platform =
+	| "linux"
+	| "macos"
+	| "ios"
+	| "freebsd"
+	| "dragonfly"
+	| "netbsd"
+	| "openbsd"
+	| "solaris"
+	| "android"
+	| "windows";
 type OsType = "linux" | "windows" | "macos" | "ios" | "android";
-type Arch = "x86" | "x86_64" | "arm" | "aarch64" | "mips" | "mips64" | "powerpc" | "powerpc64" | "riscv64" | "s390x" | "sparc64";
+type Arch =
+	| "x86"
+	| "x86_64"
+	| "arm"
+	| "aarch64"
+	| "mips"
+	| "mips64"
+	| "powerpc"
+	| "powerpc64"
+	| "riscv64"
+	| "s390x"
+	| "sparc64";
 /**
  * Returns the operating system-specific end-of-line marker.
  * - `\n` on POSIX
@@ -117,5 +138,15 @@ declare function locale(): Promise<string | null>;
  * ```
  */
 declare function hostname(): Promise<string | null>;
-export { eol, platform, family, version, type, arch, locale, exeExtension, hostname, };
+export {
+	eol,
+	platform,
+	family,
+	version,
+	type,
+	arch,
+	locale,
+	exeExtension,
+	hostname,
+};
 export type { Platform, OsType, Arch, Family };
