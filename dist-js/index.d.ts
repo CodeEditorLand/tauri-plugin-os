@@ -12,30 +12,9 @@ declare global {
 		};
 	}
 }
-type Platform =
-	| "linux"
-	| "macos"
-	| "ios"
-	| "freebsd"
-	| "dragonfly"
-	| "netbsd"
-	| "openbsd"
-	| "solaris"
-	| "android"
-	| "windows";
-type OsType = "linux" | "windows" | "macos" | "ios" | "android";
-type Arch =
-	| "x86"
-	| "x86_64"
-	| "arm"
-	| "aarch64"
-	| "mips"
-	| "mips64"
-	| "powerpc"
-	| "powerpc64"
-	| "riscv64"
-	| "s390x"
-	| "sparc64";
+type Platform = 'linux' | 'macos' | 'ios' | 'freebsd' | 'dragonfly' | 'netbsd' | 'openbsd' | 'solaris' | 'android' | 'windows';
+type OsType = 'linux' | 'windows' | 'macos' | 'ios' | 'android';
+type Arch = 'x86' | 'x86_64' | 'arm' | 'aarch64' | 'mips' | 'mips64' | 'powerpc' | 'powerpc64' | 'riscv64' | 's390x' | 'sparc64';
 /**
  * Returns the operating system-specific end-of-line marker.
  * - `\n` on POSIX
@@ -69,7 +48,7 @@ declare function platform(): Platform;
  * @since 2.0.0
  */
 declare function version(): string;
-type Family = "unix" | "windows";
+type Family = 'unix' | 'windows';
 /**
  * Returns the current operating system family. Possible values are `'unix'`, `'windows'`.
  * @example
@@ -138,15 +117,5 @@ declare function locale(): Promise<string | null>;
  * ```
  */
 declare function hostname(): Promise<string | null>;
-export {
-	eol,
-	platform,
-	family,
-	version,
-	type,
-	arch,
-	locale,
-	exeExtension,
-	hostname,
-};
+export { eol, platform, family, version, type, arch, locale, exeExtension, hostname };
 export type { Platform, OsType, Arch, Family };
