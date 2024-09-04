@@ -116,7 +116,7 @@ function exeExtension() {
  * @since 2.0.0
  */
 async function locale() {
-    return await core.invoke("plugin:os|locale");
+    return await core.invoke('plugin:os|locale');
 }
 /**
  * Returns the host name of the operating system.
@@ -127,7 +127,7 @@ async function locale() {
  * ```
  */
 async function hostname() {
-    return await core.invoke("plugin:os|hostname");
+    return await core.invoke('plugin:os|hostname');
 }
 
 exports.arch = arch;
