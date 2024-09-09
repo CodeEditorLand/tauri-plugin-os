@@ -1,16 +1,16 @@
 /** @ignore */
 declare global {
-	interface Window {
-		__TAURI_OS_PLUGIN_INTERNALS__: {
-			eol: string;
-			os_type: OsType;
-			platform: Platform;
-			family: Family;
-			version: string;
-			arch: Arch;
-			exe_extension: string;
-		};
-	}
+    interface Window {
+        __TAURI_OS_PLUGIN_INTERNALS__: {
+            eol: string;
+            os_type: OsType;
+            platform: Platform;
+            family: Family;
+            version: string;
+            arch: Arch;
+            exe_extension: string;
+        };
+    }
 }
 type Platform = 'linux' | 'macos' | 'ios' | 'freebsd' | 'dragonfly' | 'netbsd' | 'openbsd' | 'solaris' | 'android' | 'windows';
 type OsType = 'linux' | 'windows' | 'macos' | 'ios' | 'android';

@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-var core = require("@tauri-apps/api/core");
+var core = require('@tauri-apps/api/core');
 
 // Copyright 2019-2023 Tauri Programme within The Commons Conservancy
 // SPDX-License-Identifier: Apache-2.0
@@ -18,7 +18,7 @@ var core = require("@tauri-apps/api/core");
  * @since 2.0.0
  * */
 function eol() {
-	return window.__TAURI_OS_PLUGIN_INTERNALS__.eol;
+    return window.__TAURI_OS_PLUGIN_INTERNALS__.eol;
 }
 /**
  * Returns a string describing the specific operating system in use.
@@ -34,7 +34,7 @@ function eol() {
  *
  */
 function platform() {
-	return window.__TAURI_OS_PLUGIN_INTERNALS__.platform;
+    return window.__TAURI_OS_PLUGIN_INTERNALS__.platform;
 }
 /**
  * Returns the current operating system version.
@@ -47,7 +47,7 @@ function platform() {
  * @since 2.0.0
  */
 function version() {
-	return window.__TAURI_OS_PLUGIN_INTERNALS__.version;
+    return window.__TAURI_OS_PLUGIN_INTERNALS__.version;
 }
 /**
  * Returns the current operating system family. Possible values are `'unix'`, `'windows'`.
@@ -60,7 +60,7 @@ function version() {
  * @since 2.0.0
  */
 function family() {
-	return window.__TAURI_OS_PLUGIN_INTERNALS__.family;
+    return window.__TAURI_OS_PLUGIN_INTERNALS__.family;
 }
 /**
  * Returns the current operating system type. Returns `'linux'` on Linux, `'macos'` on macOS, `'windows'` on Windows, `'ios'` on iOS and `'android'` on Android.
@@ -73,7 +73,7 @@ function family() {
  * @since 2.0.0
  */
 function type() {
-	return window.__TAURI_OS_PLUGIN_INTERNALS__.os_type;
+    return window.__TAURI_OS_PLUGIN_INTERNALS__.os_type;
 }
 /**
  * Returns the current operating system architecture.
@@ -87,7 +87,7 @@ function type() {
  * @since 2.0.0
  */
 function arch() {
-	return window.__TAURI_OS_PLUGIN_INTERNALS__.arch;
+    return window.__TAURI_OS_PLUGIN_INTERNALS__.arch;
 }
 /**
  * Returns the file extension, if any, used for executable binaries on this platform. Possible values are `'exe'` and `''` (empty string).
@@ -100,7 +100,7 @@ function arch() {
  * @since 2.0.0
  */
 function exeExtension() {
-	return window.__TAURI_OS_PLUGIN_INTERNALS__.exe_extension;
+    return window.__TAURI_OS_PLUGIN_INTERNALS__.exe_extension;
 }
 /**
  * Returns a String with a `BCP-47` language tag inside. If the locale couldn’t be obtained, `null` is returned instead.
