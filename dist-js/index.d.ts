@@ -138,6 +138,7 @@ declare function locale(): Promise<string | null>;
  * ```
  */
 declare function hostname(): Promise<string | null>;
+
 export {
 	eol,
 	platform,
@@ -149,4 +150,5 @@ export {
 	exeExtension,
 	hostname,
 };
+
 export type { Platform, OsType, Arch, Family };
