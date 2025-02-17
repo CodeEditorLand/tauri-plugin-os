@@ -1,29 +1,29 @@
 [build-dependencies]
-tauri-plugin = { workspace = true, features = ["build"] }
+tauri-plugin = { version = "2.0.4", features = ["build"] }
 
 [dependencies]
 gethostname = "1.0"
-log = { workspace = true }
+log = { version = "0.4.25" }
 os_info = "3"
-serde = { workspace = true }
-serde_json = { workspace = true }
+serde = { version = "1.0.217" }
+serde_json = { version = "1.0.138" }
 serialize-to-javascript = "=0.1.1"
 sys-locale = "0.3"
-tauri = { workspace = true }
-thiserror = { workspace = true }
+tauri = { version = "2.2.5" }
+thiserror = { version = "2.0.11" }
 
 [lib]
 path = "Source/lib.rs"
 
 [package]
-authors = { workspace = true }
+authors = ["Tauri Programme within The Commons Conservancy"]
 description = "Read information about the operating system."
-edition = { workspace = true }
-license-file = { workspace = true }
-links = "tauri-plugin-os"
-name = "tauri-plugin-os"
-repository = { workspace = true }
-rust-version = { workspace = true }
+edition = "2024"
+license-file = "LICENSE"
+links = "tauri-plugin-os-read-only"
+name = "tauri-plugin-os-read-only"
+repository = "https://github.com/tauri-apps/tauri"
+rust-version = "1.85.0"
 version = "2.2.0"
 
 [package.metadata]
